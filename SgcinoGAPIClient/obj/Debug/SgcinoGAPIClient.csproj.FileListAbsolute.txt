@@ -1,0 +1,16 @@
+C:\ContourSolutions\SgcinoGAPI\SgcinoGAPI\SgcinoGAPIClient\bin\Debug\SgcinoGAPIClient.exe.config
+C:\ContourSolutions\SgcinoGAPI\SgcinoGAPI\SgcinoGAPIClient\bin\Debug\SgcinoGAPIClient.exe
+C:\ContourSolutions\SgcinoGAPI\SgcinoGAPI\SgcinoGAPIClient\bin\Debug\SgcinoGAPIClient.pdb
+C:\ContourSolutions\SgcinoGAPI\SgcinoGAPI\SgcinoGAPIClient\obj\Debug\SgcinoGAPIClient.csprojAssemblyReference.cache
+C:\ContourSolutions\SgcinoGAPI\SgcinoGAPI\SgcinoGAPIClient\obj\Debug\SgcinoGAPIClient.csproj.CoreCompileInputs.cache
+C:\ContourSolutions\SgcinoGAPI\SgcinoGAPI\SgcinoGAPIClient\obj\Debug\SgcinoGAPIClient.exe
+C:\ContourSolutions\SgcinoGAPI\SgcinoGAPI\SgcinoGAPIClient\obj\Debug\SgcinoGAPIClient.pdb
+C:\ContourSolutions\SgcinoGAPI\SgcinoGAPI\SgcinoGAPIClient\bin\Debug\Contour.BaseClient.dll
+C:\ContourSolutions\SgcinoGAPI\SgcinoGAPI\SgcinoGAPIClient\bin\Debug\Newtonsoft.Json.dll
+C:\ContourSolutions\SgcinoGAPI\SgcinoGAPI\SgcinoGAPIClient\bin\Debug\SgcinoGAPIDataLayer.exe
+C:\ContourSolutions\SgcinoGAPI\SgcinoGAPI\SgcinoGAPIClient\bin\Debug\System.ComponentModel.Annotations.dll
+C:\ContourSolutions\SgcinoGAPI\SgcinoGAPI\SgcinoGAPIClient\bin\Debug\ContourConstants.dll
+C:\ContourSolutions\SgcinoGAPI\SgcinoGAPI\SgcinoGAPIClient\bin\Debug\SgcinoGAPIDataLayer.pdb
+C:\ContourSolutions\SgcinoGAPI\SgcinoGAPI\SgcinoGAPIClient\bin\Debug\SgcinoGAPIDataLayer.exe.config
+C:\ContourSolutions\SgcinoGAPI\SgcinoGAPI\SgcinoGAPIClient\bin\Debug\Newtonsoft.Json.xml
+C:\ContourSolutions\SgcinoGAPI\SgcinoGAPI\SgcinoGAPIClient\obj\Debug\SgcinoGAPIClient.csproj.CopyComplete

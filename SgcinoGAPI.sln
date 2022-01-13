@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SgcinoGAPIBusinessLayer", "SgcinoGAPIBusinessLayer\SgcinoGAPIBusinessLayer.csproj", "{19DDABC6-FC7F-4083-8FD8-150337BC696A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SgcinoGAPIDataLayer", "SgcinoGAPIDataLayer\SgcinoGAPIDataLayer.csproj", "{AF7BA77E-81C3-4AB3-A36C-C88DF3EFAF24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SgcinoGAPIConsole", "SgcinoGAPIClient\SgcinoGAPIConsole.csproj", "{5AE9185A-F92A-4842-990B-F1D7349D7820}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SgcinoGClient", "SgcinoGClient\SgcinoGClient.csproj", "{3D2FBDD2-9009-4D64-BD98-7002C405A438}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SgcinoGAPI2", "SgcinoGAPI2\SgcinoGAPI2.csproj", "{4CE799C9-A16A-4CB8-AB1A-9DE3B8781B78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SgcinoGAPIDataModels", "SgcinoGAPIDataModels\SgcinoGAPIDataModels.csproj", "{8F285B67-D0F7-4558-8336-D874B40ED931}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19DDABC6-FC7F-4083-8FD8-150337BC696A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19DDABC6-FC7F-4083-8FD8-150337BC696A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19DDABC6-FC7F-4083-8FD8-150337BC696A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19DDABC6-FC7F-4083-8FD8-150337BC696A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF7BA77E-81C3-4AB3-A36C-C88DF3EFAF24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF7BA77E-81C3-4AB3-A36C-C88DF3EFAF24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF7BA77E-81C3-4AB3-A36C-C88DF3EFAF24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF7BA77E-81C3-4AB3-A36C-C88DF3EFAF24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AE9185A-F92A-4842-990B-F1D7349D7820}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AE9185A-F92A-4842-990B-F1D7349D7820}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AE9185A-F92A-4842-990B-F1D7349D7820}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AE9185A-F92A-4842-990B-F1D7349D7820}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D2FBDD2-9009-4D64-BD98-7002C405A438}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D2FBDD2-9009-4D64-BD98-7002C405A438}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D2FBDD2-9009-4D64-BD98-7002C405A438}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D2FBDD2-9009-4D64-BD98-7002C405A438}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CE799C9-A16A-4CB8-AB1A-9DE3B8781B78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CE799C9-A16A-4CB8-AB1A-9DE3B8781B78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CE799C9-A16A-4CB8-AB1A-9DE3B8781B78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CE799C9-A16A-4CB8-AB1A-9DE3B8781B78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F285B67-D0F7-4558-8336-D874B40ED931}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F285B67-D0F7-4558-8336-D874B40ED931}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F285B67-D0F7-4558-8336-D874B40ED931}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F285B67-D0F7-4558-8336-D874B40ED931}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EB9ED761-B3D2-4DFA-97EF-691F0CA85EC4}
+	EndGlobalSection
+EndGlobal
