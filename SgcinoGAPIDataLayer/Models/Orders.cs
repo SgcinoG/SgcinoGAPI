@@ -14,7 +14,7 @@ namespace SgcinoGAPIDataLayer.Models
         private string dbConnectionString;
       
         public int Id { get; set; }
-        public List<ProductsCtrl> Products { get; set; }
+        public List<int> Products { get; set; }
         public DateTime Created { get; set; }
         public int OrderNum { get; set; }
         public string UserId { get; set; }
@@ -24,14 +24,12 @@ namespace SgcinoGAPIDataLayer.Models
             this.dbConnectionString = dbConnectionString;
         }
 
-
         public string AddOrder()
         {
             var orderId = "";
             using (var connection = new SqlConnection(this.dbConnectionString))
             {
                 connection.Open();
-                
                 var cmd = new SqlCommand(@"INSERT INTO [dbo].[Order]([Created],[UserId]) OUTPUT Inserted.Id VALUES (@Created,@UserId)", connection);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@Created", Created);

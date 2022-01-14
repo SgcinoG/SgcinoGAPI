@@ -15,11 +15,18 @@ namespace SgcinoGAPIBusinessLayer
         private readonly IApiConnectionSettings apiConnectionSettings;
         private readonly OrdersFactory ordersFactory;
         private readonly ProductsFactory productsFactory;
+        
         public OrdersBl(IApiConnectionSettings apiConnectionSettings)
         {
             this.apiConnectionSettings = apiConnectionSettings;
             ordersFactory = new OrdersFactory(apiConnectionSettings.GetConnectionString());
             productsFactory = new ProductsFactory(apiConnectionSettings.GetConnectionString());
+        }
+
+        public OrdersBl(string dbConnectionString)
+        {
+            ordersFactory = new OrdersFactory(dbConnectionString);
+            productsFactory = new ProductsFactory(dbConnectionString);
         }
 
         public double GetTotal(int orderId)
@@ -60,20 +67,20 @@ namespace SgcinoGAPIBusinessLayer
             try
             {
                 var order = ordersFactory.Create(x =>
-                 {
-                     x.Created = newOrder.Created;
-                     x.Products = newOrder.Products;
-                     x.UserId = newOrder.UserId;
-                 });
+                {
+                    x.Created = newOrder.Created;
+                    x.Products = newOrder.Products;
+                    x.UserId = newOrder.UserId;
+                });
 
                 var orderId = order.AddOrder();
-                if (!string.IsNullOrEmpty(orderId))
+                if (string.IsNullOrEmpty(orderId))
                 {
-                    response.Status = ResponseStatus.Success;
-                    response.OrderId = int.Parse(orderId);
-                    return response;
+                    throw new Exception("There was an error while trying to add your order");
                 }
-                throw new Exception("There was an error while trying to add your order");
+                response.Status = ResponseStatus.Success;
+                response.OrderId = int.Parse(orderId);
+                return response;
             }
             catch (Exception E)
             {
@@ -82,7 +89,6 @@ namespace SgcinoGAPIBusinessLayer
                 response.Error.StackTrace = E.StackTrace;
                 return response;
             }
-            //return newOrder.Products.Count > 0 ? order.AddOrder() : false;
         }
     }
 }

@@ -28,7 +28,6 @@ namespace SgcinoGAPIClient
             //GetTotal();
             Console.ReadLine();
         }
-
         public static void RegisterUser()
         {
             var result = apiClient.RegisterUser(new UsersCtrl { Created = DateTime.Now, Name = "Admin", Surname = "Hello", Username = "Login" });
@@ -67,14 +66,11 @@ namespace SgcinoGAPIClient
             Random random = new Random();
             var limit = random.Next(1, 3);
             //builds a list of products
-            List<ProductsCtrl> products = new List<ProductsCtrl>();
+            List<int> products = new List<int>();
             for (var x = 0; x < limit; x++)
             {
                 var prodId = random.Next(1, 5);
-                products.Add(new ProductsCtrl
-                {
-                    Id = prodId
-                });
+                products.Add(prodId);
             }
             newOrder.Products = products;
             var result = apiClient.AddProducts(newOrder);

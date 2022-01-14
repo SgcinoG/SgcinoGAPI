@@ -8,9 +8,14 @@ namespace SgcinoGAPIDataModels.Models
 {
     public class GenericResponse
     {
+        public GenericResponse()
+        {
+            Error = new Error();
+        }
         public ResponseStatus Status { get; set; }
         public Error Error { get; set; }
     }
+
 
     public enum ResponseStatus
     {
@@ -24,6 +29,7 @@ namespace SgcinoGAPIDataModels.Models
 
     public class Error
     {
+        
         public string ErrorMessage { get; set; }
         public string ExceptionMessage { get; set; }
         public string StackTrace { get; set; }

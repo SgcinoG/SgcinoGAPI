@@ -6,7 +6,6 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using SgcinoGAPIBusinessLayer;
 using SgcinoGAPIDataLayer;
-using SgcinoGAPIDataLayer.SgcinoData;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +20,7 @@ namespace SgcinoGAPI2
     {
         public virtual void RegisterDependencies(IAppBuilder app, ContainerBuilder builder)
         {
-            builder.Register(c => new SgcinoDataSettings()).As<ISgcinoDataSettings>().SingleInstance();
+            //builder.Register(c => new SgcinoDataSettings()).As<ISgcinoDataSettings>().SingleInstance();
             //builder.RegisterType<EntityDbStringFactory>().As<EntityDbStringFactory>().SingleInstance();
             builder.RegisterType<SgcinoAPIDataLayer>().As<IApiConnectionSettings>().SingleInstance();
             builder.RegisterType<UsersBl>().As<UsersBl>().SingleInstance();
@@ -61,8 +60,8 @@ namespace SgcinoGAPI2
 
             //The following 2 lines are needed for Initialising Api Authentication
             var authApiInitialize = container.Resolve<IAuthApiInitialise>();
-            var apiSettings = container.Resolve<ISgcinoDataSettings>();
-            authApiInitialize.InitialiseAuthTable(apiSettings.GetEntityDBConnectionString());
+            var apiSettings = container.Resolve<IApiConnectionSettings>();
+            authApiInitialize.InitialiseAuthTable(apiSettings.GetConnectionString());
 
             var authProvider = container.Resolve<AuthorizationServerProvider>();
 

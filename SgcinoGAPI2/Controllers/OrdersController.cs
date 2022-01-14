@@ -21,27 +21,27 @@ namespace SgcinoGAPI2.Controllers
         }
 
         [HttpPost, Route("AddOrder")]
-        public OrdersResponseCtrl AddOrder([FromBody] OrdersCtrl newOrder)
+        public HttpResponseMessage AddOrder([FromBody] OrdersCtrl newOrder)
         {
-            return ordersBl.AddOrder(newOrder);
+            return Request.CreateResponse(HttpStatusCode.OK, ordersBl.AddOrder(newOrder));
         }
 
         [HttpPost, Route("AddProducts")]
-        public ProductResponseCtrl AddProducts([FromBody] OrdersCtrl newOrder)
+        public HttpResponseMessage AddProducts([FromBody] OrdersCtrl newOrder)
         {
-            return ordersBl.AddProducts(newOrder);
+            return Request.CreateResponse(HttpStatusCode.OK, ordersBl.AddProducts(newOrder));
         }
 
         [HttpPost, Route("GetLatestOrder")]
-        public string GetUserLatestOrder([FromBody]string userId)
+        public HttpResponseMessage GetUserLatestOrder([FromBody]string userId)
         {
-            return ordersBl.GetUserLatestOrder(userId);
+            return Request.CreateResponse(HttpStatusCode.OK, ordersBl.GetUserLatestOrder(userId));
         }
 
         [HttpPost, Route("GetTotal")]
-        public double GetTotal([FromBody] int orderNum)
+        public HttpResponseMessage GetTotal([FromBody] int orderNum)
         {
-            return ordersBl.GetTotal(orderNum);
+            return Request.CreateResponse(HttpStatusCode.OK, ordersBl.GetTotal(orderNum));
         }
        
     }

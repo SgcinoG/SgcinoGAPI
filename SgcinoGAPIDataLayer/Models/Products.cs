@@ -20,20 +20,17 @@ namespace SgcinoGAPIDataLayer.Models
         public bool Active { get; set; }
         public int OrderId { get; set; }
 
-        public List<SgcinoGAPIDataModels.Models.ProductsCtrl> OrderProducts { get; set; }
+        public List<int> OrderProducts { get; set; }
 
         public Products(string dbConnectionString)
         {
             this.dbConnectionString = dbConnectionString;
         }
 
-        public Products(){}
-
-
         public bool Add()
         {
             var result = 0;
-            using (var connection = new SqlConnection(this.dbConnectionString))
+            using (var connection = new SqlConnection(dbConnectionString))
             {
                 connection.Open();
 
@@ -41,7 +38,7 @@ namespace SgcinoGAPIDataLayer.Models
                 {
                     var cmd = new SqlCommand(@"INSERT INTO [dbo].[Orders]([ProductId],[OrderNum]) VALUES (@ProductId,@OrderNum)", connection);
                     cmd.CommandType = CommandType.Text;
-                    cmd.Parameters.AddWithValue("@ProductId", prod.Id);
+                    cmd.Parameters.AddWithValue("@ProductId", prod);
                     cmd.Parameters.AddWithValue("@OrderNum", OrderId);
                     result += cmd.ExecuteNonQuery();
 
@@ -50,6 +47,5 @@ namespace SgcinoGAPIDataLayer.Models
             }
             return result > 0;
         }
-
     }
 }

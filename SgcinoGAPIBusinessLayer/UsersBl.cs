@@ -23,6 +23,11 @@ namespace SgcinoGAPIBusinessLayer
             usersFactory = new UsersFactory(apiConnectionSettings.GetConnectionString());
         }
 
+        public UsersBl(string dbConnectionString)
+        {
+            usersFactory = new UsersFactory(dbConnectionString);
+        }
+
         public UsersResponseCtrl RegisterUser(UsersCtrl newUser)
         {
             var userResponse = new UsersResponseCtrl { };

@@ -23,11 +23,6 @@ namespace SgcinoGAPIDataLayer.Factories
             return newOrder;
         }
 
-        public string GetOrder(int orderNum)
-        {
-            return "";
-        }
-
         public double CalculateOrderTotal(int orderNum)
         {
             using (var connection = new SqlConnection(this.dbConnectionString))
@@ -37,21 +32,13 @@ namespace SgcinoGAPIDataLayer.Factories
                                                                 FROM[SgcinoGAPIDB].[dbo].[Order] O
                                                                 JOIN dbo.Orders OS ON OS.OrderNum = O.ID
                                                                 JOIN Products P ON OS.ProductId = P.Id
-                                                              
                                                                 WHERE O.Id = @OrderNum", connection);
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@OrderNum", orderNum);
                 var result = cmd.ExecuteScalar().ToString();
                 connection.Close();
                 return double.Parse(result);
-                
             }
-            //SELECT O.Id, Sum(P.Price) Total, U.Name
-            //FROM[SgcinoGAPIDB].[dbo].[Order] O
-            //JOIN dbo.Orders OS ON OS.OrderNum = O.ID
-            //JOIN Products P ON OS.ProductId = P.Id
-            //JOIN Users U ON O.UserId = U.UserId
-            //GROUP By O.Id, U.Name
         }
 
         public string GetUserLatestOrder(string userId)

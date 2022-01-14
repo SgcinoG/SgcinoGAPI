@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SgcinoGAPI2", "SgcinoGAPI2\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SgcinoGAPIDataModels", "SgcinoGAPIDataModels\SgcinoGAPIDataModels.csproj", "{8F285B67-D0F7-4558-8336-D874B40ED931}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SgcinoGAPITests", "SgcinoGAPITests\SgcinoGAPITests.csproj", "{5529720F-2668-4AA9-BFA5-B65921F962E5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{8F285B67-D0F7-4558-8336-D874B40ED931}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F285B67-D0F7-4558-8336-D874B40ED931}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F285B67-D0F7-4558-8336-D874B40ED931}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5529720F-2668-4AA9-BFA5-B65921F962E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5529720F-2668-4AA9-BFA5-B65921F962E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5529720F-2668-4AA9-BFA5-B65921F962E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5529720F-2668-4AA9-BFA5-B65921F962E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

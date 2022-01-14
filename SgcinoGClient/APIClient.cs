@@ -14,13 +14,11 @@ namespace SgcinoGClient
     {
         public APIClient(string username, string password, string url) : base(username, password, url)
         {
-
         }
 
         public OrdersResponseCtrl AddOrder(OrdersCtrl order)
         {
             var response = PerformPostOperation("Orders/AddOrder", order);
-
             return JsonConvert.DeserializeObject<OrdersResponseCtrl>(response);
         }
 
