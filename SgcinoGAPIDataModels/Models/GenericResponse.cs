@@ -16,7 +16,6 @@ namespace SgcinoGAPIDataModels.Models
         public Error Error { get; set; }
     }
 
-
     public enum ResponseStatus
     {
         Pending,

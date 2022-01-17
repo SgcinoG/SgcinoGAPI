@@ -42,7 +42,6 @@ namespace SgcinoGAPI2.Controllers
         public HttpResponseMessage GetTotal([FromBody] int orderNum)
         {
             return Request.CreateResponse(HttpStatusCode.OK, ordersBl.GetTotal(orderNum));
-        }
-       
+        }   
     }
 }

@@ -42,7 +42,7 @@ namespace SgcinoGAPIBusinessLayer
                 });
 
                 if (!newUserInsert.Register())
-                    throw new Exception("");
+                    throw new Exception("Registration failed");
                 userResponse.Status = ResponseStatus.Success;
                 return userResponse;
             }

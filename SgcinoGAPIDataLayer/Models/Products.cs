@@ -19,7 +19,6 @@ namespace SgcinoGAPIDataLayer.Models
         public double Price { get; set; }
         public bool Active { get; set; }
         public int OrderId { get; set; }
-
         public List<int> OrderProducts { get; set; }
 
         public Products(string dbConnectionString)
@@ -41,7 +40,6 @@ namespace SgcinoGAPIDataLayer.Models
                     cmd.Parameters.AddWithValue("@ProductId", prod);
                     cmd.Parameters.AddWithValue("@OrderNum", OrderId);
                     result += cmd.ExecuteNonQuery();
-
                 }
                 connection.Close();
             }

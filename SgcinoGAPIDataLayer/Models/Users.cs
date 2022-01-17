@@ -11,6 +11,7 @@ namespace SgcinoGAPIDataLayer.Models
     public class Users
     {
         private readonly string dbConnectionString;
+        private int result = 0;
         public Users(string dbConnectionString)
         {
             this.dbConnectionString = dbConnectionString;
@@ -23,7 +24,6 @@ namespace SgcinoGAPIDataLayer.Models
 
         public bool Register()
         {
-            var result = 0;
             using (var connection = new SqlConnection(this.dbConnectionString))
             {
                 connection.Open();
@@ -50,31 +50,19 @@ namespace SgcinoGAPIDataLayer.Models
             return result > 0;
         }
 
-        public void Update()
+        public bool Update()
         {
             using (var connection = new SqlConnection(this.dbConnectionString))
             {
                 connection.Open();
-                var cmd = new SqlCommand(@"INSERT INTO [dbo].Users
-                                                           ([Name]
-                                                           ,[Surname]
-                                                           ,[Created]
-                                                           ,[Username]
-                                                           )
-                                                     VALUES
-                                                           (@Name
-                                                           ,@Surname
-                                                           ,@Created
-                                                           ,@Username
-                                                           )", connection);
+                var cmd = new SqlCommand(@"UPDATE [dbo].Users SET NAME=@Name, Surname=@Surname", connection);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@Name", Name);
                 cmd.Parameters.AddWithValue("@Surname", Surname);
-                cmd.Parameters.AddWithValue("@Created", DateTime.Now);
-                cmd.Parameters.AddWithValue("@Username", Username);
-                cmd.ExecuteNonQuery();
+                result = cmd.ExecuteNonQuery();
                 connection.Close();
             }
+            return result > 0;
         }
 
         public void Get()

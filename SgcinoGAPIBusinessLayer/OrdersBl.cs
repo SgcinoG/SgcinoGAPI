@@ -15,7 +15,7 @@ namespace SgcinoGAPIBusinessLayer
         private readonly IApiConnectionSettings apiConnectionSettings;
         private readonly OrdersFactory ordersFactory;
         private readonly ProductsFactory productsFactory;
-        
+
         public OrdersBl(IApiConnectionSettings apiConnectionSettings)
         {
             this.apiConnectionSettings = apiConnectionSettings;
@@ -29,9 +29,21 @@ namespace SgcinoGAPIBusinessLayer
             productsFactory = new ProductsFactory(dbConnectionString);
         }
 
-        public double GetTotal(int orderId)
+        public OrdersResponseCtrl GetTotal(int orderId)
         {
-            return ordersFactory.CalculateOrderTotal(orderId);
+            var ordersResponse = new OrdersResponseCtrl { };
+            try
+            {
+                ordersResponse.Total = ordersFactory.CalculateOrderTotal(orderId);
+                ordersResponse.Status = ResponseStatus.Success;
+                return ordersResponse;
+            }
+            catch (Exception E)
+            {
+                ordersResponse.Status = ResponseStatus.Error;
+                ordersResponse.Error.ErrorMessage = E.Message;
+                return ordersResponse;
+            }
         }
 
         public string GetUserLatestOrder(string userId)

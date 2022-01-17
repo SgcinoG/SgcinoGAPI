@@ -21,6 +21,5 @@ namespace SgcinoGAPIDataLayer.Factories
             initializer(newProducts);
             return newProducts;
         }
-
     }
 }

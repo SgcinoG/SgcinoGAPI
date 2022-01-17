@@ -9,5 +9,6 @@ namespace SgcinoGAPIDataModels.Models
     public class OrdersResponseCtrl : GenericResponse
     {
         public int OrderId { get; set; }
+        public double Total { get; set; }
     }
 }
