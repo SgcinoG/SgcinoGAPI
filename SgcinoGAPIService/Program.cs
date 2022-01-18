@@ -3,8 +3,8 @@ using Microsoft.Owin.Hosting;
 using System;
 using System.Configuration;
 using Topshelf;
+using SgcinoGClient;
 using SgcinoGAPIBusinessLayer;
-using Microsoft.Owin.Host.HttpListener;
 
 namespace SgcinoGAPIService
 {
@@ -44,7 +44,8 @@ namespace SgcinoGAPIService
                 server = new BackgroundJobServer();
 
                 //schedule job
-                RecurringJob.AddOrUpdate("Get Daily Orders", () => new OrdersBl("").AddOrder(new SgcinoGAPIDataModels.Models.OrdersCtrl { Created = DateTime.Now, Products = new System.Collections.Generic.List<int> { 1, 2 } }), "0 12 * * *", timeZone);
+                RecurringJob.AddOrUpdate("Add Order", () => new OrdersBl().AddOrder(new SgcinoGAPIDataModels.Models.OrdersCtrl { Created = DateTime.Now, UserId= "4714340D-D0A1-4D74-A993-7CB8D79F51A2", Products = new System.Collections.Generic.List<int> { 1, 2 } }), "0 10 * * *", timeZone);
+                RecurringJob.AddOrUpdate("Add User", () => new UsersBl().RegisterUser(new SgcinoGAPIDataModels.Models.UsersCtrl { Created = DateTime.Now, Name = "From Service", Surname = "Service", Username = "UserService" }), "10 10 * * *", timeZone);
                 //# ┌───────────── minute (0 - 59)
                 //# │ ┌───────────── hour (0 - 23)
                 //# │ │ ┌───────────── day of the month (1 - 31)

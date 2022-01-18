@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SgcinoGAPIDataLayer.Models
 {
@@ -70,53 +66,26 @@ namespace SgcinoGAPIDataLayer.Models
             using (var connection = new SqlConnection(this.dbConnectionString))
             {
                 connection.Open();
-                var cmd = new SqlCommand(@"INSERT INTO [dbo].Users
-                                                           ([Name]
-                                                           ,[Surname]
-                                                           ,[Created]
-                                                           ,[Username]
-                                                           )
-                                                     VALUES
-                                                           (@Name
-                                                           ,@Surname
-                                                           ,@Created
-                                                           ,@Username
-                                                           )", connection);
+                var cmd = new SqlCommand(@"Select * FROM [dbo].Users WHERE UserId = '@UserId'", connection);
                 cmd.CommandType = CommandType.Text;
-                cmd.Parameters.AddWithValue("@Name", Name);
-                cmd.Parameters.AddWithValue("@Surname", Surname);
-                cmd.Parameters.AddWithValue("@Created", DateTime.Now);
-                cmd.Parameters.AddWithValue("@Username", Username);
-                cmd.ExecuteNonQuery();
+                cmd.Parameters.AddWithValue("@UserId", UserId);
+                result = cmd.ExecuteNonQuery();
                 connection.Close();
             }
         }
 
-        public void Delete()
+        public bool Delete()
         {
             using (var connection = new SqlConnection(this.dbConnectionString))
             {
                 connection.Open();
-                var cmd = new SqlCommand(@"INSERT INTO [dbo].Users
-                                                           ([Name]
-                                                           ,[Surname]
-                                                           ,[Created]
-                                                           ,[Username]
-                                                           )
-                                                     VALUES
-                                                           (@Name
-                                                           ,@Surname
-                                                           ,@Created
-                                                           ,@Username
-                                                           )", connection);
+                var cmd = new SqlCommand(@"DELETE FROM [dbo].Users WHERE UserId = '@UserId'", connection);
                 cmd.CommandType = CommandType.Text;
-                cmd.Parameters.AddWithValue("@Name", Name);
-                cmd.Parameters.AddWithValue("@Surname", Surname);
-                cmd.Parameters.AddWithValue("@Created", DateTime.Now);
-                cmd.Parameters.AddWithValue("@Username", Username);
-                cmd.ExecuteNonQuery();
+                cmd.Parameters.AddWithValue("@UserId", UserId);
+                result = cmd.ExecuteNonQuery();
                 connection.Close();
             }
+            return result > 0;
         }
     }
 }

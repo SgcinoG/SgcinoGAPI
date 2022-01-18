@@ -1,11 +1,11 @@
-C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\obj\Debug\SgcinoGAPIService.csprojAssemblyReference.cache
-C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\obj\Debug\SgcinoGAPIService.csproj.CoreCompileInputs.cache
 C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\bin\Debug\SgcinoGAPIService.exe.config
 C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\bin\Debug\SgcinoGAPIService.exe
 C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\bin\Debug\SgcinoGAPIService.pdb
+C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\bin\Debug\Contour.BaseClient.dll
 C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\bin\Debug\Hangfire.Core.dll
 C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\bin\Debug\Hangfire.SqlServer.dll
 C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\bin\Debug\Microsoft.Owin.dll
+C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\bin\Debug\Microsoft.Owin.Host.HttpListener.dll
 C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
 C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\bin\Debug\Microsoft.Owin.Hosting.dll
 C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\bin\Debug\Newtonsoft.Json.dll
@@ -13,6 +13,8 @@ C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\bin\Debug\Owin.dll
 C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\bin\Debug\SgcinoGAPIBusinessLayer.exe
 C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\bin\Debug\SgcinoGAPIDataLayer.exe
 C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\bin\Debug\SgcinoGAPIDataModels.dll
+C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\bin\Debug\SgcinoGClient.dll
+C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\bin\Debug\System.ComponentModel.Annotations.dll
 C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\bin\Debug\System.Configuration.ConfigurationManager.dll
 C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\bin\Debug\System.Security.AccessControl.dll
 C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\bin\Debug\System.Security.Permissions.dll
@@ -24,9 +26,12 @@ C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\bin\Debug\SgcinoGAPIDataLayer.
 C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\bin\Debug\SgcinoGAPIDataLayer.exe.config
 C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\bin\Debug\SgcinoGAPIDataModels.pdb
 C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\bin\Debug\SgcinoGAPIDataModels.dll.config
+C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\bin\Debug\SgcinoGClient.pdb
+C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\bin\Debug\SgcinoGClient.dll.config
 C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\bin\Debug\Hangfire.Core.xml
 C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\bin\Debug\Hangfire.SqlServer.xml
 C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\bin\Debug\Microsoft.Owin.xml
+C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\bin\Debug\Microsoft.Owin.Host.HttpListener.xml
 C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
 C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\bin\Debug\Microsoft.Owin.Hosting.xml
 C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\bin\Debug\Newtonsoft.Json.xml
@@ -48,8 +53,8 @@ C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\bin\Debug\pt-PT\Hangfire.Core.
 C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\bin\Debug\tr-TR\Hangfire.Core.resources.dll
 C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\bin\Debug\zh\Hangfire.Core.resources.dll
 C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\bin\Debug\zh-TW\Hangfire.Core.resources.dll
+C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\obj\Debug\SgcinoGAPIService.csprojAssemblyReference.cache
+C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\obj\Debug\SgcinoGAPIService.csproj.CoreCompileInputs.cache
 C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\obj\Debug\SgcinoGAPIService.csproj.CopyComplete
 C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\obj\Debug\SgcinoGAPIService.exe
 C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\obj\Debug\SgcinoGAPIService.pdb
-C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\bin\Debug\Microsoft.Owin.Host.HttpListener.dll
-C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIService\bin\Debug\Microsoft.Owin.Host.HttpListener.xml

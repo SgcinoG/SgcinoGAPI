@@ -29,6 +29,12 @@ namespace SgcinoGAPIBusinessLayer
             productsFactory = new ProductsFactory(dbConnectionString);
         }
 
+        public OrdersBl()
+        {
+            ordersFactory = new OrdersFactory("Server=192.168.2.181;Initial Catalog=SgcinoGAPIDB;Persist Security Info=False;User ID=sa;Password=Contour1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;");
+            productsFactory = new ProductsFactory("Server=192.168.2.181;Initial Catalog=SgcinoGAPIDB;Persist Security Info=False;User ID=sa;Password=Contour1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;");
+        }
+
         public OrdersResponseCtrl GetTotal(int orderId)
         {
             var ordersResponse = new OrdersResponseCtrl { };
@@ -41,7 +47,8 @@ namespace SgcinoGAPIBusinessLayer
             catch (Exception E)
             {
                 ordersResponse.Status = ResponseStatus.Error;
-                ordersResponse.Error.ErrorMessage = E.Message;
+                ordersResponse.Error.ExceptionMessage = E.Message;
+                ordersResponse.Error.ErrorMessage = $"There was an error while trying to calculate the total for order no. {orderId}";
                 return ordersResponse;
             }
         }
@@ -69,6 +76,7 @@ namespace SgcinoGAPIBusinessLayer
             catch (Exception E)
             {
                 productsResponse.Error.ExceptionMessage = E.Message;
+                productsResponse.Error.ErrorMessage = "There was a problem adding products to your order";
                 productsResponse.Status = ResponseStatus.Error;
                 return productsResponse;
             }

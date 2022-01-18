@@ -12,7 +12,6 @@ namespace SgcinoGAPIDataLayer.Models
     public class Products 
     {
         private string dbConnectionString;
-
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
@@ -32,7 +31,6 @@ namespace SgcinoGAPIDataLayer.Models
             using (var connection = new SqlConnection(dbConnectionString))
             {
                 connection.Open();
-
                 foreach (var prod in OrderProducts)
                 {
                     var cmd = new SqlCommand(@"INSERT INTO [dbo].[Orders]([ProductId],[OrderNum]) VALUES (@ProductId,@OrderNum)", connection);

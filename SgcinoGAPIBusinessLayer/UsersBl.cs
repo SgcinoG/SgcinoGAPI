@@ -28,6 +28,11 @@ namespace SgcinoGAPIBusinessLayer
             usersFactory = new UsersFactory(dbConnectionString);
         }
 
+        public UsersBl()
+        {
+            usersFactory = new UsersFactory("Server=192.168.2.181;Initial Catalog=SgcinoGAPIDB;Persist Security Info=False;User ID=sa;Password=Contour1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;");
+        }
+
         public UsersResponseCtrl RegisterUser(UsersCtrl newUser)
         {
             var userResponse = new UsersResponseCtrl { };
