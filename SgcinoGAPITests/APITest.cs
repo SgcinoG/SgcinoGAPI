@@ -24,7 +24,12 @@ namespace SgcinoGAPITests
         [TestMethod]
         public void AddOrder()
         {
-            var response = ordersBl.AddOrder(new OrdersCtrl { Created = DateTime.Now, UserId = UserId });
+            var request = new OrdersCtrl
+            {
+                Created = DateTime.Now,
+                UserId = UserId
+            };
+            var response = ordersBl.AddOrder(request);
             Assert.IsTrue(ResponseStatus.Success == response.Status);
             Assert.IsNotNull(response.OrderId);
         }
@@ -33,8 +38,9 @@ namespace SgcinoGAPITests
         public void AddInvalidOrderNum()
         {
             Products = new List<int> { 1, 2 };
-            var response = ordersBl.AddProducts(new OrdersCtrl { Id = 90, Created = DateTime.Now, UserId = UserId, Products = Products });
-            Assert.IsFalse(ResponseStatus.Success == response.Status);
+            var newOrder = new OrdersCtrl { Id = 90, Created = DateTime.Now, UserId = UserId, Products = Products };
+            var response = ordersBl.AddProducts(newOrder);
+            Assert.IsTrue(ResponseStatus.Error == response.Status);
             Assert.IsTrue(response.Error.ErrorMessage == "There was a problem adding products to your order");
         }
 
@@ -42,7 +48,8 @@ namespace SgcinoGAPITests
         public void AddProducts()
         {
             Products = new List<int> { 1, 2 };
-            var response = ordersBl.AddProducts(new OrdersCtrl { Id = 1, Created = DateTime.Now, UserId = UserId, Products = Products });
+            var newOrder = new OrdersCtrl { Id = 1, Created = DateTime.Now, UserId = UserId, Products = Products };
+            var response = ordersBl.AddProducts(newOrder);
             Assert.IsTrue(ResponseStatus.Success == response.Status);
         }
 
@@ -50,7 +57,8 @@ namespace SgcinoGAPITests
         public void AddInvalidProducts()
         {
             Products = new List<int> { 1, 25 };
-            var response = ordersBl.AddProducts(new OrdersCtrl { Id = 1, Created = DateTime.Now, UserId = UserId, Products = Products });
+            var newOrder = new OrdersCtrl { Id = 1, Created = DateTime.Now, UserId = UserId, Products = Products };
+            var response = ordersBl.AddProducts(newOrder);
             Assert.IsTrue(ResponseStatus.Error == response.Status);
             Assert.IsTrue(response.Error.ErrorMessage == "There was a problem adding products to your order");
         }
@@ -58,7 +66,8 @@ namespace SgcinoGAPITests
         [TestMethod]
         public void AddUser()
         {
-            var response = usersBl.RegisterUser(new UsersCtrl { Created = DateTime.Now, Name = "Unit Test", Surname = "Testing", Username = "Awee" });
+            var newUser = new UsersCtrl { Created = DateTime.Now, Name = "Unit Test", Surname = "Testing", Username = "Awee" };
+            var response = usersBl.RegisterUser(newUser);
             Assert.IsTrue(ResponseStatus.Success == response.Status);
         }
 

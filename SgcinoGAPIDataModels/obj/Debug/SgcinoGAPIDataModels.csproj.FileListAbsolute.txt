@@ -69,7 +69,6 @@ C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIDataModels\bin\Debug\System.Text.Encod
 C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIDataModels\bin\Debug\System.Text.Json.xml
 C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIDataModels\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIDataModels\bin\Debug\System.ValueTuple.xml
-C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIDataModels\obj\Debug\SgcinoGAPIDataModels.csprojAssemblyReference.cache
 C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIDataModels\obj\Debug\SgcinoGAPIDataModels.csproj.CoreCompileInputs.cache
 C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIDataModels\obj\Debug\SgcinoGAPIDataModels.csproj.CopyComplete
 C:\ContourSolutions\SgcinoGAPI2\SgcinoGAPIDataModels\obj\Debug\SgcinoGAPIDataModels.dll

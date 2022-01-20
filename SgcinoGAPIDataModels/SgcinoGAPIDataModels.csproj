@@ -100,6 +100,8 @@
     <Compile Include="Models\OrdersResponseCtrl.cs" />
     <Compile Include="Models\ProductResponseCtrl.cs" />
     <Compile Include="Models\ProductsCtrl.cs" />
+    <Compile Include="Models\TransactionCtrl.cs" />
+    <Compile Include="Models\TransactionResponseCtrl.cs" />
     <Compile Include="Models\UsersCtrl.cs" />
     <Compile Include="Models\UsersResponseCtrl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -14,6 +14,9 @@ namespace SgcinoGAPIService
         {
             HostFactory.Run(x =>
             {
+                x.SetServiceName("SgcinoAPIService");
+                x.SetDisplayName("Sgcino API Service");
+                x.SetDescription("Adds Orders bra");
                 x.Service<HangfireService>(servconfig =>
                 {
                     servconfig.ConstructUsing(() => new HangfireService());

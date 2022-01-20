@@ -67,9 +67,12 @@
   <ItemGroup>
     <Compile Include="Factories\OrdersFactory.cs" />
     <Compile Include="Factories\ProductsFactory.cs" />
+    <Compile Include="Factories\SQLConnection.cs" />
+    <Compile Include="Factories\TransactionsFactory.cs" />
     <Compile Include="Factories\UsersFactory.cs" />
     <Compile Include="Models\Orders.cs" />
     <Compile Include="Models\Products.cs" />
+    <Compile Include="Models\Transaction.cs" />
     <Compile Include="Models\Users.cs" />
     <Compile Include="Models\UsersResponse.cs" />
     <Compile Include="Program.cs" />

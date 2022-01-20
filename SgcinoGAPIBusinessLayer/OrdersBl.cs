@@ -15,18 +15,21 @@ namespace SgcinoGAPIBusinessLayer
         private readonly IApiConnectionSettings apiConnectionSettings;
         private readonly OrdersFactory ordersFactory;
         private readonly ProductsFactory productsFactory;
+        private readonly TransactionsFactory transactionsFactory;
 
         public OrdersBl(IApiConnectionSettings apiConnectionSettings)
         {
             this.apiConnectionSettings = apiConnectionSettings;
             ordersFactory = new OrdersFactory(apiConnectionSettings.GetConnectionString());
             productsFactory = new ProductsFactory(apiConnectionSettings.GetConnectionString());
+            transactionsFactory = new TransactionsFactory(apiConnectionSettings.GetConnectionString());
         }
 
         public OrdersBl(string dbConnectionString)
         {
             ordersFactory = new OrdersFactory(dbConnectionString);
             productsFactory = new ProductsFactory(dbConnectionString);
+            transactionsFactory = new TransactionsFactory(dbConnectionString);
         }
 
         public OrdersBl()
@@ -109,6 +112,69 @@ namespace SgcinoGAPIBusinessLayer
                 response.Error.StackTrace = E.StackTrace;
                 return response;
             }
+        }
+
+        public TransactionResponseCtrl AddTransaction(TransactionCtrl transaction)
+        {
+            var response = new TransactionResponseCtrl { };
+            try
+            {
+                var newTransaction = transactionsFactory.Create(x =>
+                {
+                    x.Amount = transaction.Amount;
+                    x.CduId = transaction.CduId;
+                    x.Created = transaction.Created;
+                    x.MeterNumber = transaction.MeterNumber;
+                    x.Status = transaction.Status;
+                });
+
+                if (!newTransaction.Add())
+                    throw new Exception("");
+                response.Status = ResponseStatus.Success;
+            }
+            catch (Exception E)
+            {
+                response.Error.ExceptionMessage = E.Message;
+                response.Status = ResponseStatus.Error;
+            }
+            return response;
+        }
+
+        public List<TransactionCtrl> GetTransactions(int StatusType=0)
+        {
+            var newTransaction = new List<TransactionCtrl>();
+            try
+            {
+                newTransaction = transactionsFactory.GetTransactionsByType(StatusType);
+                return newTransaction;
+            }
+            catch (Exception E)
+            {
+                return newTransaction;
+            }
+        }
+
+        public TransactionResponseCtrl UpdateTransaction(TransactionCtrl transaction)
+        {
+            var response = new TransactionResponseCtrl { };
+            try
+            {
+                var newTransaction = transactionsFactory.Create(x =>
+                {
+                    x.Id = transaction.Id;
+                    x.Status = transaction.Status;
+                });
+
+                if (!newTransaction.Update())
+                    throw new Exception("");
+                response.Status = ResponseStatus.Success;
+            }
+            catch (Exception E)
+            {
+                response.Error.ExceptionMessage = E.Message;
+                response.Status = ResponseStatus.Error;
+            }
+            return response;
         }
     }
 }

@@ -28,7 +28,6 @@ namespace SgcinoGAPIDataModels.Models
 
     public class Error
     {
-        
         public string ErrorMessage { get; set; }
         public string ExceptionMessage { get; set; }
         public string StackTrace { get; set; }
