@@ -131,6 +131,7 @@ namespace SgcinoGAPIBusinessLayer
                 if (!newTransaction.Add())
                     throw new Exception("");
                 response.Status = ResponseStatus.Success;
+                Console.WriteLine("New Transaction at {0}", DateTime.Now); //Add New Transaction
             }
             catch (Exception E)
             {
@@ -142,6 +143,7 @@ namespace SgcinoGAPIBusinessLayer
 
         public List<TransactionCtrl> GetTransactions(int StatusType=0)
         {
+            Console.WriteLine("Processing transactions at {0}", DateTime.Now);
             var newTransaction = new List<TransactionCtrl>();
             try
             {

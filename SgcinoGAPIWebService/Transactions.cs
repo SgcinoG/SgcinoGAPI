@@ -51,7 +51,7 @@ namespace SgcinoGAPIWebService
 
         private void AddTransactionsEvent(Object source, System.Timers.ElapsedEventArgs e)
         {
-            Console.WriteLine("New Transaction at {0}", e.SignalTime); //Add New Transaction
+            
             AddTransaction().Wait();
         }
 
@@ -70,7 +70,7 @@ namespace SgcinoGAPIWebService
                 {
                     canGet = false; //Lock
                     var transactions = ordersBl.GetTransactions((int)TransactionStatus.Pending);
-                    Console.WriteLine("Processing transactions at {0}", DateTime.Now); //Add New Transaction
+                    //Console.WriteLine("Processing transactions at {0}", DateTime.Now); //Add New Transaction
                     Thread.Sleep(10000);
                     foreach (var transaction in transactions)
                     {
@@ -102,7 +102,7 @@ namespace SgcinoGAPIWebService
                 {
                     canGet = false; //Lock
                     var transactions = ordersBl.GetTransactions((int)TransactionStatus.Pending);
-                    Console.WriteLine("Processing transactions at {0}", DateTime.Now); //Add New Transaction
+                     //Add New Transaction
                     Thread.Sleep(5000);
                     foreach (var transaction in transactions)
                     {
